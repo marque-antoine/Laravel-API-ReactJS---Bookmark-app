@@ -26,4 +26,14 @@ class ApiController extends Controller
         //Add auth check
         return response()->json(['message'=>'bookmark created'],201);
     }
+
+    public function getBookmark($id){
+        //Logic to get a bookmark infos
+        if(Bookmark::where('id',$id)->exists()){
+            $bookmark=Bookmark::where('id',$id)->get()->toJson(JSON_PRETTY_PRINT);
+            return response($bookmark,200);
+        }else{
+            return response()->json(['message'=>'Bookmark not found'],404);
+        }
+    }
 }

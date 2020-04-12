@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 //Bookmarks routes
 Route::get('bookmarks','ApiController@getAllBookmarks');
 Route::post('bookmarks','ApiController@createBookmark');
+Route::get('bookmarks/{id}', 'ApiController@getBookmark');
 
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
