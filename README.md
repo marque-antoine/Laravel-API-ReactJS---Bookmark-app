@@ -44,7 +44,7 @@ a react-based framework that provides accessibility, modularity, responsiveness,
 
 ## Test with Postman
 
-All requests are available at [https://www.getpostman.com/collections/dfd44367727c310cc2a8](https://www.getpostman.com/collections/dfd44367727c310cc2a8)
+All requests are available [here](https://www.getpostman.com/collections/dfd44367727c310cc2a8)
 
 Unfortunately, presets are not shared so **to send request as authenticated, add this on your header :**
 
