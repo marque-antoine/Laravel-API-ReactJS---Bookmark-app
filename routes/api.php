@@ -23,6 +23,7 @@ Route::delete('bookmarks/{id}', 'ApiController@deleteBookmark');
 
 //Passport Routes
 Route::post('register', 'ApiUserController@register');
+Route::post('login', 'ApiUserController@login');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
