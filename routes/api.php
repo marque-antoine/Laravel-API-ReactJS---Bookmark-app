@@ -16,10 +16,12 @@ use Illuminate\Support\Facades\Route;
 
 //Bookmarks routes
 Route::get('bookmarks','ApiController@getAllBookmarks');
-Route::middleware('auth:api')->post('bookmarks','ApiController@createBookmark');
 Route::get('bookmarks/{id}', 'ApiController@getBookmark');
-Route::put('bookmarks/{id}', 'ApiController@updateBookmark');
-Route::delete('bookmarks/{id}', 'ApiController@deleteBookmark');
+
+
+Route::middleware('auth:api')->post('bookmarks','ApiController@createBookmark');
+Route::middleware('auth:api')->put('bookmarks/{id}', 'ApiController@updateBookmark');
+Route::middleware('auth:api')->delete('bookmarks/{id}', 'ApiController@deleteBookmark');
 
 //Passport Routes
 Route::post('register', 'ApiUserController@register');

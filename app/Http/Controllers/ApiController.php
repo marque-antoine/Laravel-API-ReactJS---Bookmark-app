@@ -25,7 +25,11 @@ class ApiController extends Controller
         $bookmark->flames=$request->flames;
         $bookmark->save();
         //Add auth check
-        return response()->json(['message'=>'bookmark created'],201);
+        if(auth()->user()->bookmarks()->save($bookmark)){
+            return response()->json(['message'=>'bookmark created'],201);
+        }else{
+            return response()->json(['message'=>'Unauthorized'],500);
+        }
     }
 
     public function getBookmark($id){
@@ -41,16 +45,21 @@ class ApiController extends Controller
     public function updateBookmark(Request $request,$id){
         //Logic to update a bookmark infos
         if(Bookmark::where('id',$id)->exists()){
-            //Add auth check
-            $bookmark=Bookmark::find($id);
-            $bookmark->folder=is_null($request->folder) ? $bookmark->folder : $request->folder;
-            $bookmark->tags =is_null($request->tags) ? $bookmark->tags : $request->tags;
-            $bookmark->title=is_null($request->title) ? $bookmark->title : $request->title;
-            $bookmark->shared=is_null($request->shared) ? $bookmark->shared : $request->shared;
-            $bookmark->url=is_null($request->url) ? $bookmark->url : $request->url;
-            $bookmark->flames=is_null($request->flames) ? $bookmark->flames : $request->flames;
-            $bookmark->save();
-            return response()->json(['message'=>'bookmark updated'],200);
+            //Add auth check, can only update your bookmarks
+            if(auth()->user()->bookmarks()->find($id)){
+                $bookmark=Bookmark::find($id);
+                $bookmark->folder=is_null($request->folder) ? $bookmark->folder : $request->folder;
+                $bookmark->tags =is_null($request->tags) ? $bookmark->tags : $request->tags;
+                $bookmark->title=is_null($request->title) ? $bookmark->title : $request->title;
+                $bookmark->shared=is_null($request->shared) ? $bookmark->shared : $request->shared;
+                $bookmark->url=is_null($request->url) ? $bookmark->url : $request->url;
+                $bookmark->flames=is_null($request->flames) ? $bookmark->flames : $request->flames;
+                $bookmark->save();
+                return response()->json(['message'=>'bookmark updated'],200);
+            }else{
+                return response()->json(['message'=>'Unauthorized'],404);
+            }
+            
 
         }else{
             return response()->json(['message'=>'Bookmark not found'],404);
@@ -58,12 +67,17 @@ class ApiController extends Controller
     }
 
     public function deleteBookmark($id){
-        //Logic to delete a bookmark 
+        //Logic to delete a bookmark, can only delete your bookmarks
         if(Bookmark::where('id',$id)->exists()){
             //Add auth check
-            $bookmark=Bookmark::find($id);
-            $bookmark->delete();
-            return response()->json(['message'=>'bookmark deleted'],202);
+            if(auth()->user()->bookmarks()->find($id)){
+                $bookmark=Bookmark::find($id);
+                $bookmark->delete();
+                return response()->json(['message'=>'bookmark deleted'],202);
+            }else{
+                 return response()->json(['message'=>'Bookmark not found'],404);           
+            }
+            
         }else{
             return response()->json(['message'=>'Bookmark not found'],404);
         }
