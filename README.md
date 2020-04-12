@@ -2,8 +2,11 @@
 
 ## Prerequisite
 
-1.  Make sure you have [composer](https://getcomposer.org/download/) installed.
-2.  Make sure you have latest stable version of [node](https://nodejs.org/en/download/) installed.
+1.  [PHP](https://www.php.net/) using here version 7.2.5
+2.  [Composer](https://getcomposer.org/download/)
+3.  [MySQL](https://www.mysql.com/)
+4.  [Laravel](https://laravel.com/) using here version 7.0
+5.  [Postman](https://www.postman.com/)
 
 ## Installation
 
