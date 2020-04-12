@@ -55,3 +55,6 @@ Unfortunately, presets are not shared so **to send request as authenticated, add
 -   [ ] Add dark mode
 -   [ ] Check user input
 -   [ ] Send email when a bookmark is shared
+-   [ ] Add preview
+-   [ ] Add notifications for responses from the API using [React-toastify](https://github.com/fkhadra/react-toastify)
+-   [ ] add infos to the form when updating
