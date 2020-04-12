@@ -30,7 +30,6 @@ export default class List extends Component {
                         <Bookmark key={bookmark.id} bookmark={bookmark} />
                     )}
                 </InfiniteScroll>
-                Success
             </Box>
         );
     }
