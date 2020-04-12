@@ -11,9 +11,13 @@
 
 -   Clone the repository using  `git clone https://github.com/marque-antoine/Laravel-API-ReactJS---Bookmark-app && cd Laravel-API-ReactJS---Bookmark-app`
 -   Fill out a .env file in the project root using the .env.example file as a template
+- create a new database for your application by running : `mysql -uroot -p` 
+- Run the following to create a new database named **project :**
+> CREATE  DATABASE  `project`;
+> quit;
 -   Install composer dependencies using  `composer install && composer update`
 -   Run  `php artisan key:generate`  `php artisan migrate` `php artisan db:seed` and `php artisan passport:install`  
--   Install NPM dependencies using  `npm install`
+
 
 ## Installation of laravel/passport
 [https://laravel.com/docs/7.x/passport#consuming-your-api-with-javascript](https://laravel.com/docs/7.x/passport#consuming-your-api-with-javascript)
