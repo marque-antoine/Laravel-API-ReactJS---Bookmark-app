@@ -23,11 +23,21 @@ export default class List extends Component {
             });
     }
 
+    updateBookmarks(type) {
+        fetch("api/bookmarks/" + type)
+            .then(response => {
+                return response.json();
+            })
+            .then(bookmark => {
+                this.setState({ bookmarks });
+            });
+    }
+
     render() {
         //InfiniteScroll manage Lazy loading
         return (
             <Box>
-                <Buttons />
+                <Buttons updateBookmarks={this.updateBookmarks} />
                 <InfiniteScroll items={this.state.bookmarks}>
                     {bookmark => (
                         <Bookmark key={bookmark.id} bookmark={bookmark} />

@@ -82,6 +82,10 @@ class ApiController extends Controller
             return response()->json(['message'=>'Bookmark not found'],404);
         }
     }
-
+    
+    public function getCategories(){
+        $categories = Bookmark::distinct()->get('folder')->toJson(JSON_PRETTY_PRINT);
+        return response($categories,200);
+    }
     
 }

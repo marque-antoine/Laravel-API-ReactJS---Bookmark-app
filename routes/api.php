@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 //Bookmarks routes
 Route::get('bookmarks','ApiController@getAllBookmarks');
+//Must be before {id} !
+Route::get('bookmarks/categories', 'ApiController@getCategories');
 Route::get('bookmarks/{id}', 'ApiController@getBookmark');
 
 
