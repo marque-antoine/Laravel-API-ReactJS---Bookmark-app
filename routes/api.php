@@ -21,6 +21,8 @@ Route::get('bookmarks/{id}', 'ApiController@getBookmark');
 Route::put('bookmarks/{id}', 'ApiController@updateBookmark');
 Route::delete('bookmarks/{id}', 'ApiController@deleteBookmark');
 
+//Passport Routes
+Route::post('register', 'ApiUserController@register');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
