@@ -52,7 +52,7 @@ Unfortunately, presets are not shared so **to send request as authenticated, add
 
 (\$accessToken is available with **register** and **login**)
 
-To test the localization add this on your header : `X-localization=>fr` (or en)
+To test the localization add this on your header : `'X-localization'=>'fr'` (or en)
 
 # TO DO
 
