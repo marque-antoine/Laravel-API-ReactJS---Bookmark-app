@@ -11,7 +11,7 @@ import {
     MaskedInput,
     Button
 } from "grommet";
-import { MailOption, AddCircle } from "grommet-icons";
+import { MailOption, AddCircle, FormClose } from "grommet-icons";
 
 import { emailMask } from "../Utils/emailMask.js";
 
@@ -107,8 +107,8 @@ export default function UpdateBookmark(props) {
                                 <Button type="submit" primary label="Update" />
                                 <Button type="reset" label="Reset" />
                                 <Button
+                                    icon={<FormClose />}
                                     onClick={() => setOpenLayer(!openLayer)}
-                                    label="Close"
                                 />
                             </Box>
                         </Form>

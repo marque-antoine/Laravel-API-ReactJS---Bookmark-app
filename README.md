@@ -25,6 +25,11 @@ Et voilà !
 
 For e-mail, configure .env file. If you want to use Gmail, follow [this article tuto](https://medium.com/@agavitalis/how-to-send-an-email-in-laravel-using-gmail-smtp-server-53d962f01a0c)
 
+## Permissions
+
+You must be logged in in order to add bookmarks
+You can only edit or delete your bookmarks
+
 ## Installation of laravel/passport
 
 [Laravel and Passport with API](https://laravel.com/docs/7.x/passport#consuming-your-api-with-javascript)
@@ -55,7 +60,10 @@ Unfortunately, presets are not shared so **to send request as authenticated, add
 -   [ ] Add dark mode
 -   [ ] Check user input
 -   [ ] Send email when a bookmark is shared
--   [ ] Add preview
+-   [x] Add preview for desktop
+-   [ ] Add preview for mobile
 -   [ ] Add notifications for responses from the API using [React-toastify](https://github.com/fkhadra/react-toastify)
 -   [ ] add infos to the form when updating
 -   [ ] add "order by flames"
+-   [ ] add "order by tags"
+-   [ ] add Language selection

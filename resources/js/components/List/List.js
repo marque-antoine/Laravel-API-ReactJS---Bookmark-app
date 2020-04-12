@@ -37,7 +37,7 @@ export default class List extends Component {
     render() {
         //InfiniteScroll manage Lazy loading
         return (
-            <Box>
+            <Box overflow="auto" align="center">
                 <Buttons updateBookmarks={this.updateBookmarks} />
                 <InfiniteScroll items={this.state.bookmarks}>
                     {bookmark => (

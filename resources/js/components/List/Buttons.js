@@ -6,9 +6,11 @@ import CategoriesButton from "../Buttons/CategoriesButton";
 
 export default function Buttons(props) {
     return (
-        <Box direction="row">
-            <CategoriesButton updateBookmarks={props.updateBookmarks} />
-            <AddBookmarkButton />
+        <Box alignContent="between">
+            <Box direction="row">
+                <CategoriesButton updateBookmarks={props.updateBookmarks} />
+                <AddBookmarkButton />
+            </Box>
         </Box>
     );
 }
