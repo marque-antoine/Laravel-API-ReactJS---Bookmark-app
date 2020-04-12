@@ -33,3 +33,7 @@ Unfortunately, presets are not shared so **to send request as authenticated, add
 `'Accept'=>'application/json'; 'Authorization' => 'Bearer' + $accessToken,`
 
 (\$accessToken is available with **register** and **login**)
+
+# TO DO
+
+-   [ ] Add admin to the app
