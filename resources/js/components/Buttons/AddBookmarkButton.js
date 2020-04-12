@@ -106,6 +106,10 @@ export default function UpdateBookmark(props) {
                             <Box direction="row" gap="medium">
                                 <Button type="submit" primary label="Update" />
                                 <Button type="reset" label="Reset" />
+                                <Button
+                                    onClick={() => setOpenLayer(!openLayer)}
+                                    label="Close"
+                                />
                             </Box>
                         </Form>
                     </Box>
