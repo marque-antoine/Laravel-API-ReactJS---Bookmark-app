@@ -30,6 +30,9 @@ Route::middleware('auth:api')->delete('bookmarks/{id}', 'ApiController@deleteBoo
 Route::post('register', 'ApiUserController@register');
 Route::post('login', 'ApiUserController@login');
 
+//Localization routes
+Route::get('localization', 'ApiLocalizationController@index')->middleware('localization');
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
