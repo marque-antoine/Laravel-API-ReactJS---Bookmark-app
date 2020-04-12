@@ -23,8 +23,7 @@
 
 Et voilà !
 
-For e-mail, configure .env file
-If you want to use Gmail, follow [this article tuto](https://medium.com/@agavitalis/how-to-send-an-email-in-laravel-using-gmail-smtp-server-53d962f01a0c)
+For e-mail, configure .env file. If you want to use Gmail, follow [this article tuto](https://medium.com/@agavitalis/how-to-send-an-email-in-laravel-using-gmail-smtp-server-53d962f01a0c)
 
 ## Installation of laravel/passport
 
