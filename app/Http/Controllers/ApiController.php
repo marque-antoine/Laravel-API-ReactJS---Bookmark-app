@@ -55,4 +55,18 @@ class ApiController extends Controller
             return response()->json(['message'=>'Bookmark not found'],404);
         }
     }
+
+    public function deleteBookmark($id){
+        //Logic to delete a bookmark 
+        if(Bookmark::where('id',$id)->exists()){
+            //Add auth check
+            $bookmark=Bookmark::find($id);
+            $bookmark->delete();
+            return response()->json(['message'=>'bookmark deleted'],202);
+        }else{
+            return response()->json(['message'=>'Bookmark not found'],404);
+        }
+    }
+
+    
 }
