@@ -36,4 +36,23 @@ class ApiController extends Controller
             return response()->json(['message'=>'Bookmark not found'],404);
         }
     }
+
+    public function updateBookmark(Request $request,$id){
+        //Logic to update a bookmark infos
+        if(Bookmark::where('id',$id)->exists()){
+            //Add auth check
+            $bookmark=Bookmark::find($id);
+            $bookmark->folder=is_null($request->folder) ? $bookmark->folder : $request->folder;
+            $bookmark->tags =is_null($request->tags) ? $bookmark->tags : $request->tags;
+            $bookmark->title=is_null($request->title) ? $bookmark->title : $request->title;
+            $bookmark->shared=is_null($request->shared) ? $bookmark->shared : $request->shared;
+            $bookmark->url=is_null($request->url) ? $bookmark->url : $request->url;
+            $bookmark->flames=is_null($request->flames) ? $bookmark->flames : $request->flames;
+            $bookmark->save();
+            return response()->json(['message'=>'bookmark updated'],200);
+
+        }else{
+            return response()->json(['message'=>'Bookmark not found'],404);
+        }
+    }
 }
