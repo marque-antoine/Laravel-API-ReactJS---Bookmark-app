@@ -23,6 +23,9 @@
 
 Et voilà !
 
+For e-mail, configure .env file
+If you want to use Gmail, follow [this article tuto](https://medium.com/@agavitalis/how-to-send-an-email-in-laravel-using-gmail-smtp-server-53d962f01a0c)
+
 ## Installation of laravel/passport
 
 [Laravel and Passport with API](https://laravel.com/docs/7.x/passport#consuming-your-api-with-javascript)
@@ -51,3 +54,5 @@ Unfortunately, presets are not shared so **to send request as authenticated, add
 -   [ ] Manage error 404 through the api
 -   [ ] Change the register and login view to use the api
 -   [ ] Add dark mode
+-   [ ] Check user input
+-   [ ] Send email when a bookmark is shared
