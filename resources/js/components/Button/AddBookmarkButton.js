@@ -46,7 +46,10 @@ export default function UpdateBookmark(props) {
                 onClick={() => setOpenLayer(!openLayer)}
             />
             {openLayer && (
-                <Layer onClickOutside={() => setOpenLayer(!openLayer)}>
+                <Layer
+                    onClickOutside={() => setOpenLayer(!openLayer)}
+                    animation="fadeIn"
+                >
                     <Box pad="medium">
                         <Form
                             value={value}

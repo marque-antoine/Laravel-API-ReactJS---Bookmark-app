@@ -2,12 +2,23 @@ import React, { useState } from "react";
 import { Box, Text, Anchor, Button, CheckBox } from "grommet";
 import { Refresh, MailOption, Trash } from "grommet-icons";
 
-import UpdateBookmark from './UpdateBookmark'
+import UpdateBookmark from "./UpdateBookmark";
 
 export default function Bookmark(props) {
     const [checked, setChecked] = useState(false);
     const [openRefresh, setOpenRefresh] = useState(false);
 
+    function deleteBookmark(id) {
+        axios
+            .delete("api/bookmarks/" + id)
+            .then(function(response) {
+                console.log(response);
+                window.location.reload(false);
+            })
+            .then(function(error) {
+                console.log(error);
+            });
+    }
 
     return (
         <Box fill>
@@ -39,7 +50,7 @@ export default function Bookmark(props) {
                     <Button
                         icon={<Trash color="#228BE5" />}
                         label="Delete"
-                        onClick={() => {}}
+                        onClick={() => deleteBookmark(props.bookmark.id)}
                     />
                     <Button
                         icon={<Refresh color="#228BE5" />}
@@ -57,7 +68,7 @@ export default function Bookmark(props) {
                     </Box>
                 </Box>
             </Box>
-            {openRefresh && <UpdateBookmark id={props.bookmark.id}/>}
+            {openRefresh && <UpdateBookmark id={props.bookmark.id} />}
         </Box>
     );
 }
