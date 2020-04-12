@@ -27,7 +27,7 @@ For e-mail, configure .env file. If you want to use Gmail, follow [this article 
 
 ## Permissions
 
-You must be logged in in order to add bookmarks
+You must be logged in in order to add bookmarks.
 You can only edit or delete your bookmarks
 
 ## Installation of laravel/passport
@@ -51,6 +51,8 @@ Unfortunately, presets are not shared so **to send request as authenticated, add
 `'Accept'=>'application/json'; 'Authorization' => 'Bearer' + $accessToken,`
 
 (\$accessToken is available with **register** and **login**)
+
+To test the localization add this on your header : `X-localization=>fr` (or en)
 
 # TO DO
 
