@@ -11,7 +11,7 @@
 -   Fill out a .env file in the project root using the .env.example file as a template
 -   create a new database for your application by running : `mysql -uroot -p`
 -   Run the following to create a new database named **project :** `` CREATE DATABASE `project` ``;
-
+-   Quit mysql using `quit;`
 -   Install composer dependencies using `composer install && composer update`
 -   Run `php artisan key:generate` `php artisan migrate` `php artisan db:seed` and `php artisan passport:install`
 
