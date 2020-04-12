@@ -15,6 +15,8 @@
 -   Install composer dependencies using `composer install && composer update`
 -   Run `php artisan key:generate` `php artisan migrate` `php artisan db:seed` and `php artisan passport:install`
 
+Et voilà !
+
 ## Installation of laravel/passport
 
 [https://laravel.com/docs/7.x/passport#consuming-your-api-with-javascript](https://laravel.com/docs/7.x/passport#consuming-your-api-with-javascript)
