@@ -38,7 +38,7 @@ class User extends Authenticatable
     ];
 
     public function bookmarks(){
-        return $this->hasMany(Bookmarks::class);
+        return $this->hasMany(Bookmark::class);
     }
 }
 

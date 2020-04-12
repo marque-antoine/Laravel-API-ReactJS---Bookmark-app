@@ -10,7 +10,10 @@ class DatabaseSeeder extends Seeder
      * @return void
      */
     public function run()
+    //Seeds db with fake data
     {
-        // $this->call(UsersTableSeeder::class);
+        factory(App\User::class,10)->create()->each(function($user){
+            $user->bookmarks()->saveMany(factory(App\Bookmark::class, rand(5,10))->make());
+        });
     }
 }
