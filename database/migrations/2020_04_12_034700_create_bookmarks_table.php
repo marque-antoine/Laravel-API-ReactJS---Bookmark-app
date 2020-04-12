@@ -14,8 +14,17 @@ class CreateBookmarksTable extends Migration
     public function up()
     {
         Schema::create('bookmarks', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+            $table->unsignedBigIncrements('user_id');
+            $table->string('title');
+            $table->string('url');
+            $table->string('shared')->nullable();
+            $table->string('folder')->nullable();
+            $table->string('tags')->nullable();
+            $table->integer('flames')->nullable();
             $table->timestamps();
+            //Delete all the bookmarks of a deleted user
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
