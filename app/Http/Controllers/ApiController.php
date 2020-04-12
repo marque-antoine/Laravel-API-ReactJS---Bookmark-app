@@ -23,6 +23,7 @@ class ApiController extends Controller
         $bookmark->tags = $request->tags;
         $bookmark->url=$request->url;
         $bookmark->flames=$request->flames;
+        $bookmark->save();
         //Add auth check
         return response()->json(['message'=>'bookmark created'],201);
     }

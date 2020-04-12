@@ -15,7 +15,7 @@ class CreateBookmarksTable extends Migration
     {
         Schema::create('bookmarks', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->foreignId('user_id');
+            $table->foreignId('user_id')->nullable();
             $table->string('title');
             $table->string('url');
             $table->string('shared')->nullable();
