@@ -19,6 +19,7 @@ Route::get('bookmarks','ApiController@getAllBookmarks');
 //Must be before {id} !
 Route::get('bookmarks/categories', 'ApiController@getCategories');
 Route::get('bookmarks/{id}', 'ApiController@getBookmark');
+Route::get('bookmarks/category/{category}','ApiController@getBookmarksByCategory');
 
 
 Route::middleware('auth:api')->post('bookmarks','ApiController@createBookmark');

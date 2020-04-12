@@ -87,5 +87,19 @@ class ApiController extends Controller
         $categories = Bookmark::distinct()->get('folder')->toJson(JSON_PRETTY_PRINT);
         return response($categories,200);
     }
+
+    public function getBookmarksByCategory($category){
+        if($category=="all"){
+            $bookmarks=Bookmark::orderBy('updated_at','DESC')->get()->toJson(JSON_PRETTY_PRINT);
+            return response($bookmarks,200);
+        }
+        if(Bookmark::where('folder',$category)->exists()){
+            $bookmarks=Bookmark::orderBy('updated_at','DESC')->where('folder',$category)->get()->toJson(JSON_PRETTY_PRINT);
+            return response($bookmarks,200);
+        }
+        else{
+            return response()->json(['message'=>'Bookmarks not found'],404);
+        }
+    }
     
 }

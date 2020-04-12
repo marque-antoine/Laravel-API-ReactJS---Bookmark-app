@@ -19,10 +19,26 @@ export default function CategoriesButton(props) {
             dropContent={
                 <Box gap="small">
                     {categories.map(categorie => (
-                        <Box key={Math.random()}>
+                        <Box
+                            key={Math.random()}
+                            onClick={() => {
+                                props.updateBookmarks(
+                                    "category",
+                                    categorie.folder.toString()
+                                );
+                            }}
+                        >
                             <Text textAlign="center">{categorie.folder}</Text>
                         </Box>
                     ))}
+                    <Box
+                        key="all"
+                        onClick={() => {
+                            props.updateBookmarks("category", "all");
+                        }}
+                    >
+                        <Text textAlign="center">All</Text>
+                    </Box>
                 </Box>
             }
         />

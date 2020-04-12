@@ -10,6 +10,7 @@ export default class List extends Component {
         this.state = {
             bookmarks: []
         };
+        this.updateBookmarks = this.updateBookmarks.bind(this);
     }
 
     //Get all bookmarks
@@ -23,12 +24,12 @@ export default class List extends Component {
             });
     }
 
-    updateBookmarks(type) {
-        fetch("api/bookmarks/" + type)
+    updateBookmarks(type, value) {
+        fetch("api/bookmarks/" + type + "/" + value)
             .then(response => {
                 return response.json();
             })
-            .then(bookmark => {
+            .then(bookmarks => {
                 this.setState({ bookmarks });
             });
     }
