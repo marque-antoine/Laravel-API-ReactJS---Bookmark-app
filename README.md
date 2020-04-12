@@ -17,12 +17,19 @@
 -   Quit mysql using `quit;`
 -   Install composer dependencies using `composer install && composer update`
 -   Run `php artisan key:generate` `php artisan migrate` `php artisan db:seed` and `php artisan passport:install`
+-   Install NPM dependencies using `npm install`
+-   Run php server with `php artisan serve`
+-   Run `npm run watch` if you want to edit the app with hot reloading
 
 Et voilà !
 
 ## Installation of laravel/passport
 
-[https://laravel.com/docs/7.x/passport#consuming-your-api-with-javascript](https://laravel.com/docs/7.x/passport#consuming-your-api-with-javascript)
+[Laravel and Passport with API](https://laravel.com/docs/7.x/passport#consuming-your-api-with-javascript)
+
+## Installation of laravel/react
+
+[Laravel & React](https://laravel.com/docs/7.x/frontend#using-react)
 
 ## Test with Postman
 
@@ -37,3 +44,4 @@ Unfortunately, presets are not shared so **to send request as authenticated, add
 # TO DO
 
 -   [ ] Add admin to the app
+-   [ ] Manage error 404 through the api
