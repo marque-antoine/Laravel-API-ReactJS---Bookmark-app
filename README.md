@@ -45,3 +45,4 @@ Unfortunately, presets are not shared so **to send request as authenticated, add
 
 -   [ ] Add admin to the app
 -   [ ] Manage error 404 through the api
+-   [ ] Change the register and login view to use the api
