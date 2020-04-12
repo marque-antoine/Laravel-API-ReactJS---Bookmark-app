@@ -8,17 +8,35 @@ import {
     Text,
     RangeInput,
     Select,
-    MaskedInput
+    MaskedInput,
+    Button
 } from "grommet";
 import { MailOption } from "grommet-icons";
 
 import { emailMask } from "../Utils/emailMask.js";
 
-export default function UpdateBookmark() {
+export default function UpdateBookmark(props) {
     const [value, setValue] = useState({});
     const [rangeValue, setRangeValue] = useState();
     const [selectValue, setSelectValue] = useState();
     const [emailValue, setEmailValue] = useState();
+
+    function updateBookmark(id) {
+        var bookmark = value;
+        bookmark.flames = rangeValue;
+        bookmark.folder = selectValue;
+        bookmark.shared = emailValue;
+        //Use of axios, he manages the auth token for us
+        axios
+            .put("api/bookmarks/" + id, bookmark)
+            .then(function(response) {
+                console.log(response);
+                window.location.reload(false);
+            })
+            .then(function(error) {
+                console.log(error);
+            });
+    }
     return (
         <Collapsible open={true}>
             <Box pad="medium">
@@ -26,7 +44,9 @@ export default function UpdateBookmark() {
                     value={value}
                     onChange={nextValue => setValue(nextValue)}
                     onReset={() => setValue({})}
-                    onSubmit={() => {}}
+                    onSubmit={() => {
+                        updateBookmark(props.id);
+                    }}
                 >
                     <FormField name="title" label="Title*">
                         <TextInput name="title" />

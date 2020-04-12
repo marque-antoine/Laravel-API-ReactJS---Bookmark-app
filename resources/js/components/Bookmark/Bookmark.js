@@ -7,6 +7,8 @@ import UpdateBookmark from './UpdateBookmark'
 export default function Bookmark(props) {
     const [checked, setChecked] = useState(false);
     const [openRefresh, setOpenRefresh] = useState(false);
+
+
     return (
         <Box fill>
             <Box
@@ -55,7 +57,7 @@ export default function Bookmark(props) {
                     </Box>
                 </Box>
             </Box>
-            {openRefresh && <UpdateBookmark/>}
+            {openRefresh && <UpdateBookmark id={props.bookmark.id}/>}
         </Box>
     );
 }

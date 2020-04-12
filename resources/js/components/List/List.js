@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Box, InfiniteScroll } from "grommet";
 
 import Bookmark from "../Bookmark/Bookmark";
+import AddBookmarkButton from "../Button/AddBookmarkButton";
 
 export default class List extends Component {
     constructor(props) {
@@ -25,6 +26,7 @@ export default class List extends Component {
     render() {
         return (
             <Box>
+                <AddBookmarkButton />
                 <InfiniteScroll items={this.state.bookmarks}>
                     {bookmark => (
                         <Bookmark key={bookmark.id} bookmark={bookmark} />
